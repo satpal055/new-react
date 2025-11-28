@@ -6,14 +6,12 @@ export const TableContext = createContext();
 
 export function TableProvider({ children }) {
     // TableProvider is a wrapper that gives components access to the shared data (tableData).
-    const [tableData, setTableData] = useState(() => {
-        return JSON.parse(localStorage.getItem("tableData")) || [];
-    });
+    const [tableData, setTableData] = useState([])
 
-    useEffect(() => {
-        localStorage.setItem("tableData", JSON.stringify(tableData));
-        // Save changes to localStorage
-    }, [tableData]);
+    // useEffect(() => {
+    //     localStorage.setItem("tableData", JSON.stringify(tableData));
+    //     // Save changes to localStorage
+    // }, [tableData]);
 
     return (
         <TableContext.Provider value={{ tableData, setTableData }}>

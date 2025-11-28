@@ -16,7 +16,7 @@ export default function List() {
 
         if (!user || !item) return;
 
-        const newEntry = { user, item };
+        // const newEntry = { user, item };
         const updatedData = [...tableData];
 
         if (editIndex !== null) {
@@ -28,7 +28,7 @@ export default function List() {
         }
 
         setTableData(updatedData); // context updates
-        localStorage.setItem("tableData", JSON.stringify(updatedData));
+        // localStorage.setItem("tableData", JSON.stringify(updatedData));
 
         setUser("");
         setItem("");
@@ -36,7 +36,7 @@ export default function List() {
     const handleDelete = (index) => {
         const updatedData = tableData.filter((_, i) => i !== index);
         setTableData(updatedData);
-        localStorage.setItem("tableData", JSON.stringify(updatedData));
+        // localStorage.setItem("tableData", JSON.stringify(updatedData));
     };
     const handleEdit = (index) => {
         setEditIndex(index);
